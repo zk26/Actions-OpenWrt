@@ -18,3 +18,9 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+
+# 1. 把 luci-theme-alpha 拉进 package
+git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
+# 2. 让 menuconfig 能选到
+echo "CONFIG_PACKAGE_luci-theme-alpha=y" >> .config
